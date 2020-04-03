@@ -1,21 +1,21 @@
 <template>
   <Page class="page">
-    <ActionBar title="My Tasks" class="action-bar" />
+    <ActionBar title="Todo 앱" class="action-bar" />
 
     <TabView height="100%" androidTabsPosition="bottom">
-      <TabViewItem title="To Do">
+      <TabViewItem title="할일">
         <StackLayout orientation="vertical" width="100%" height="100%">
           <GridLayout columns="2*, *" rows="*" width="100%" height="25%">
             <TextField
               col="0"
               row="0"
-              hint="Type new task..."
+              hint="할일을 적어주세요"
               editable="true"
               @returnPress="onButtonTap"
               v-model="textFieldValue"
             />
 
-            <Button col="1" row="0" text="Button" @tap="onButtonTap" />
+            <Button col="1" row="0" text="추가" @tap="onButtonTap" />
           </GridLayout>
 
           <ListView for="todo in todos" @itemTap="onItemTap" style="height:75%">
@@ -26,7 +26,7 @@
         </StackLayout>
       </TabViewItem>
 
-      <TabViewItem title="Completed">
+      <TabViewItem title="완료">
         <Label text="This tab will list completed tasks for tracking." textWrap="true" />
       </TabViewItem>
     </TabView>
